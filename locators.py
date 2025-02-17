@@ -29,3 +29,4 @@ class HomePageUrbanRoutesLocators:
 
     new_card = (By.XPATH, "//div[contains (@class, 'pp-title') and normalize-space()='Tarjeta']")
     added_ice_cream = (By.XPATH, "//div[contains (@class, 'counter-value') and normalize-space()='2']")
+    wait_for = (By.CSS_SELECTOR, "div.order-number")

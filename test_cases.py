@@ -1,4 +1,7 @@
-from data import phone_number
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
+import locators
 from locators import HomePageUrbanRoutesLocators
 import data
 from selenium import webdriver
@@ -82,7 +85,7 @@ class TestUrbanRoutes:
     def test_request_taxi(self):
         home_page_methods = HomePageUrbanRoutesMethods(self.driver)
         home_page_methods.final_taxi_request_button()
-        home_page_methods.wait_seconds()
+        WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located(locators.HomePageUrbanRoutesLocators.wait_for))
 
     @classmethod
     def teardown_class(cls):
